@@ -25,7 +25,7 @@ public class Main {
         for (int i = 0; i < newArray.length; i++) {
             newArray[i] = (int)Math.round((Math.random() * 30) - 20 );
         }
-        System.out.println("Our random array is:");
+        System.out.println("\nOur random array is:");
         System.out.println(Arrays.toString(newArray));
         return newArray;
     }
@@ -40,6 +40,6 @@ public class Main {
                 numMin = array[i];
             }
         }
-        System.out.printf("\nMinial number is %d. Maximal number is %d", numMin, numMax);
+        System.out.printf("\nMinial number is %d. Maximal number is %d\n", numMin, numMax);
     }
 }
