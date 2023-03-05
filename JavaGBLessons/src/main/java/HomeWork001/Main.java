@@ -1,6 +1,7 @@
 package HomeWork001;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Main {
             а остальные - равны ему.
         */
         findMinAndMaxElementsOfArray(generateRandomArray());
+        isYearleap();
     }
 
     private static int[] generateRandomArray() {
@@ -40,6 +42,18 @@ public class Main {
                 numMin = array[i];
             }
         }
-        System.out.printf("\nMinial number is %d. Maximal number is %d\n", numMin, numMax);
+        System.out.printf("\nMinial number is %d. Maximal number is %d", numMin, numMax);
+    }
+
+    private static void isYearleap() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("\n---------\nEnter the year u wanna check as leap year: ");
+        int year = in.nextInt();
+        boolean leapYear = ((year % 400 == 0) || (year %4 == 0 && year % 100 != 0));
+        if (leapYear) {
+            System.out.printf("%d year is Leap Year!", year);
+        } else {
+            System.out.println("NOT a Leap Year!");
+        }
     }
 }
