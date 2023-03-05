@@ -20,6 +20,7 @@ public class Main {
         */
         findMinAndMaxElementsOfArray(generateRandomArray());
         isYearleap();
+        sortArraysElemsToEndByNum(generateArray());
     }
 
     private static int[] generateRandomArray() {
@@ -27,7 +28,7 @@ public class Main {
         for (int i = 0; i < newArray.length; i++) {
             newArray[i] = (int)Math.round((Math.random() * 30) - 20 );
         }
-        System.out.println("\nOur random array is:");
+        System.out.println("\n---------\nOur random array is:");
         System.out.println(Arrays.toString(newArray));
         return newArray;
     }
@@ -55,5 +56,30 @@ public class Main {
         } else {
             System.out.println("NOT a Leap Year!");
         }
+    }
+
+    private static int[] generateArray() {
+        int[] array = {3, 2, 3, 3, 2, 3, 2, 3};
+        System.out.println("\n---------\nOur first array is:");
+        System.out.println(Arrays.toString(array));
+        return array;
+
+    }
+
+    private static int[] sortArraysElemsToEndByNum(int[] nums) {
+        int[] newArray = new int[nums.length];
+        int step = 0;
+        int val = 3;
+        for (int i: nums) {
+            if (i != val){
+                newArray[step++] = i;
+            }
+        }
+        for (int i = step; i < newArray.length; i++) {
+            newArray[i] = val;
+        }
+        System.out.println("\nOur edited array is:");
+        System.out.println(Arrays.toString(newArray));
+        return newArray;
     }
 }
