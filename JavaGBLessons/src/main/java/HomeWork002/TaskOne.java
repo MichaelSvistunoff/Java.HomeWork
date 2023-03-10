@@ -1,5 +1,6 @@
 package HomeWork002;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskOne {
@@ -8,22 +9,30 @@ public class TaskOne {
         Напишите метод, который принимает на вход строку (String)
         и определяет является ли строка палиндромом (возвращает boolean значение).
         */
-        System.out.println(isPolindrome());
+        System.out.println(isPalindrome());
     }
 
-    private static boolean isPolindrome() {
+    private static boolean isPalindrome() {
         // Create a new Scanner and String from user's input
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a word to check on polindrome: ");
-        String wordToCheck = sc.next();
+        System.out.print("Enter a word to check on palindrome: ");
+
+        // Make lowerCase
+        String wordToCheck = sc.next().toLowerCase();
+
         // Make array from string
         char[] newArr = wordToCheck.toCharArray();
-        // Make checker
-        boolean isTrue = false;
 
-        for (int i = 0; i < newArr.length / 2; i++) {
-            isTrue = newArr[i] == newArr[newArr.length - 1 - i];
+        // Let's create an new array to save letters from prev array inverted
+        char[] invertedArr = new char[newArr.length];
+
+        // Save inverted data from prev array to new
+        for (int i = 0, j = newArr.length - 1; i < invertedArr.length; i++) {
+            invertedArr[i] = newArr[j];
+            j--;
         }
-        return isTrue;
+
+        // Check and return True/False
+        return Arrays.equals(newArr, invertedArr);
     }
 }
