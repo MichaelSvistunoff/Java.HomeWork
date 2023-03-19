@@ -10,18 +10,18 @@ public class TaskOne {
 
     private static void getSortedRating(Map map) {
         System.out.print("\nTelephone book rating of repeats:\n---------------------------\n");
-        LinkedList<String> listEmployee = new LinkedList<>();
-        String currName = listEmployee.getFirst();
-        String nextName = listEmployee.getFirst();
         String name = null;
         int count = 0;
         Map<String, Integer> db = new HashMap<>();
+        LinkedList<String> listEmployee = new LinkedList<>();
 
         // Fill list of employee by name
         for (Object o : map.keySet()) {
             name = o.toString().split(" ")[0];
             listEmployee.add(name);
         }
+        String currName = listEmployee.getFirst();
+        String nextName = listEmployee.getFirst();
 
         // Sort names by alphabet
         Collections.sort(listEmployee);
